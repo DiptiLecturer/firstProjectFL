@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,6 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
             TextField(
               controller: firstController,
               keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+              ],
               decoration: InputDecoration(
                 labelText: "First Number",
                 prefixIcon: Icon(Icons.looks_one),
@@ -88,6 +92,9 @@ class _HomeScreenState extends State<HomeScreen> {
             TextField(
               controller: secondController,
               keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+              ],
               decoration: InputDecoration(
                 labelText: "Second Number",
                 prefixIcon: Icon(Icons.looks_two),
